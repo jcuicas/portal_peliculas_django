@@ -1,0 +1,56 @@
+  {% load static %}
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Portal de peliculas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex justify-content-center">
+        <img src="{% static 'img/movie-film.png' %}" class="logo-img border rounded" alt="movie film">
+      </div>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Genero peliculas
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">
+                
+                {% for item in generos %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="#" class="list-group-item-action" style="text-decoration: none;">{{ item.name }}</a>
+                    <span class="badge text-bg-primary rounded-pill">14</span>
+                  </li>
+                {% endfor %}
+                  
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Genero peliculas TV
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">
+                
+                {% for item in generos_tv %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="#" class="list-group-item-action" style="text-decoration: none;">{{ item.name }}</a>
+                    <span class="badge text-bg-primary rounded-pill">14</span>
+                  </li>
+                {% endfor %}
+                    
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
